@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://hxolo2atju0k"]
+
+[ext_resource type="Script" uid="uid://7j8cjqm5g33a" path="res://main.gd" id="1_main"]
+
+[node name="Main" type="Control" unique_id=435783694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_main")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=851174455]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=176398638]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Margin/Layout" unique_id=633440791]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Margin/Layout/Header" unique_id=1885248382]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Godot versions"
+
+[node name="StatusLabel" type="Label" parent="Margin/Layout/Header" unique_id=1732874838]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Toolbar" type="HBoxContainer" parent="Margin/Layout" unique_id=1586572290]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Search" type="LineEdit" parent="Margin/Layout/Toolbar" unique_id=98023219]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Search version"
+
+[node name="PrefixFilter" type="OptionButton" parent="Margin/Layout/Toolbar" unique_id=427667156]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 1
+item_count = 6
+popup/item_0/text = "All"
+popup/item_0/id = 0
+popup/item_1/text = "Stable"
+popup/item_1/id = 1
+popup/item_2/text = "Release candidates"
+popup/item_2/id = 2
+popup/item_3/text = "Beta"
+popup/item_3/id = 3
+popup/item_4/text = "Dev snapshots"
+popup/item_4/id = 4
+popup/item_5/text = "Alpha"
+popup/item_5/id = 5
+
+[node name="Refresh" type="Button" parent="Margin/Layout/Toolbar" unique_id=1029538797]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Refresh"
+
+[node name="Body" type="HSplitContainer" parent="Margin/Layout" unique_id=131600635]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ListPanel" type="PanelContainer" parent="Margin/Layout/Body" unique_id=236036766]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.1
+
+[node name="ReleaseList" type="ItemList" parent="Margin/Layout/Body/ListPanel" unique_id=1524254466]
+unique_name_in_owner = true
+layout_mode = 2
+allow_reselect = true
+
+[node name="Details" type="PanelContainer" parent="Margin/Layout/Body" unique_id=751643836]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DetailsLayout" type="VBoxContainer" parent="Margin/Layout/Body/Details" unique_id=1855779441]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="VersionLabel" type="Label" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=976006118]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "-"
+
+[node name="PrefixLabel" type="Label" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=1095842458]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+
+[node name="DateLabel" type="Label" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=2056808444]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="LaunchRow" type="HBoxContainer" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=608172039]
+layout_mode = 2
+
+[node name="LaunchButton" type="Button" parent="Margin/Layout/Body/Details/DetailsLayout/LaunchRow" unique_id=1659428457]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+disabled = true
+text = "Launch"
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=1694867940]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="DownloadButton" type="Button" parent="Margin/Layout/Body/Details/DetailsLayout/Buttons" unique_id=366856871]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Download"
+
+[node name="DeleteButton" type="Button" parent="Margin/Layout/Body/Details/DetailsLayout/Buttons" unique_id=1303571170]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "Delete"
+
+[node name="ReleasePageButton" type="Button" parent="Margin/Layout/Body/Details/DetailsLayout/Buttons" unique_id=1597044348]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Release page"
+
+[node name="Progress" type="ProgressBar" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=2089398394]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+
+[node name="LinksTitle" type="Label" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=466050546]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "All builds"
+
+[node name="LinksList" type="ItemList" parent="Margin/Layout/Body/Details/DetailsLayout" unique_id=100372476]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DeleteConfirm" type="ConfirmationDialog" parent="." unique_id=2037313662]
+unique_name_in_owner = true
+title = "Delete"
+initial_position = 2
+size = Vector2i(420, 172)
+ok_button_text = "Delete"
